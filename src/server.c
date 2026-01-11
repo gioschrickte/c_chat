@@ -42,6 +42,13 @@ int main(int argc, char *argv[]) { // Serão 2 parametros: nome do arquivo e num
     if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
         error("Falha no Binding.\n");
 
+    int opt = 1;
+
+    // Configura o socket para permitir o reuso imediato da porta
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+        error("Erro no setsockopt");
+    }
+
     listen(sockfd, 5); // 5 é o numero máximo de clientes que podem se conectar ao servidor
     clilen = sizeof(cli_addr);
 

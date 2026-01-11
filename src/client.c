@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     bcopy((char *) server->h_addr, (char *) &serv_addr.sin_addr.s_addr, server->h_length);
     serv_addr.sin_port = htons(portno);
     if (connect(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
-        error("Falha na conexão.");
+        error("Falha na conexão");
     printf("Conexão com o servidor sucedida!\n");
 
     while (1) {
@@ -55,12 +55,12 @@ int main(int argc, char *argv[]) {
         fgets(buffer, 255, stdin);
         n = write(sockfd, buffer, strlen(buffer));
         if (n < 0)
-            error("Erro no envio.");
+            error("Erro no envio");
 
         bzero(buffer, 255);
         n = read(sockfd, buffer, 255);
         if (n < 0)
-            error("Erro na leitura.");
+            error("Erro na leitura");
         printf("Server: %s", buffer);
 
         int i = strncmp("Adeus", buffer, 3);
