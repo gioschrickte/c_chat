@@ -50,6 +50,8 @@ int main(int argc, char *argv[]) { // Serão 2 parametros: nome do arquivo e num
     if (newsockfd < 0)
         error("Erro em Accept()");
 
+    printf("Conexão com cliente recebida!\n");
+
     while (1) {
         bzero(buffer, 255); // limpa o buffer
         n = read(newsockfd, buffer, 255);
