@@ -37,9 +37,10 @@ gcc src/client.c -o client
 ```
 
 ### 2. Executar
- ```bash 
+ `bash 
  ./server N_PORTA
- ```
-```bash
+ `
+
+`bash
  ./client IP_SERVER N_PORTA
-```
+`
