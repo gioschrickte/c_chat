@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
             error("Erro na leitura");
         printf("Server: %s", buffer);
 
-        int i = strncmp("Adeus", buffer, 3);
+        int i = strncmp("Adeus", buffer, 5);
         if (!i) break;
     }
 
