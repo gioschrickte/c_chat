@@ -34,3 +34,12 @@ gcc src/server.c -o server
 
 # Compilar o Cliente
 gcc src/client.c -o client
+```
+
+### 2. Executar
+ ```bash 
+ ./server N_PORTA
+ ```
+```bash
+ ./client IP_SERVER N_PORTA
+```
